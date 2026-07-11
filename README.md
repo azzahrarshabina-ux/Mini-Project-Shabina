@@ -1,1 +1,1 @@
-# Shabina-MiniProject
+# revou-js-60min

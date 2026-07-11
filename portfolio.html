@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabina's Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .fade-up { animation: fade-up 0.6s ease forwards; }
+        .fade-in { animation: fade-in 0.8s ease forwards; }
+        .float   { animation: float 3s ease-in-out infinite; }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.25s; opacity: 0; }
+        .delay-3 { animation-delay: 0.4s; opacity: 0; }
+        .delay-4 { animation-delay: 0.55s; opacity: 0; }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-rose-50 to-purple-50">
+
+    <!-- Header / Hero -->
+    <header class="relative overflow-hidden pt-16 pb-12 px-6 text-center">
+        <!-- Background blobs -->
+        <div class="absolute top-0 left-1/4 w-72 h-72 rounded-full opacity-20 blur-3xl"
+             style="background: radial-gradient(circle, #f43f5e, transparent);"></div>
+        <div class="absolute top-10 right-1/4 w-64 h-64 rounded-full opacity-20 blur-3xl"
+             style="background: radial-gradient(circle, #8b5cf6, transparent);"></div>
+
+        <div class="relative z-10 fade-up delay-1">
+            <!-- Avatar placeholder -->
+            <div class="float w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl shadow-lg"
+                 style="background: linear-gradient(135deg, #f43f5e, #8b5cf6);">
+                👩‍💻
+            </div>
+
+            <h1 class="text-4xl font-extrabold text-slate-800 mb-2">
+                Shabina's Projects
+            </h1>
+            <p class="text-slate-500 text-lg max-w-md mx-auto">
+                Mini projects built with HTML, CSS & Vanilla JavaScript
+            </p>
+
+            <!-- Tech badges -->
+            <div class="flex gap-2 justify-center mt-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-600">HTML5</span>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-600">Tailwind CSS</span>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-600">JavaScript</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Cards -->
+    <main class="max-w-4xl mx-auto px-6 pb-20">
+        <h2 class="fade-up delay-2 text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6 text-center">
+            Projects
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Card 1: Counter App -->
+            <a href="./index.html"
+               class="fade-up delay-3 card-hover block rounded-3xl overflow-hidden shadow-md"
+               style="background: white;">
+                <!-- Preview area -->
+                <div class="h-40 flex items-center justify-center relative overflow-hidden"
+                     style="background: linear-gradient(135deg, #fda4af, #fb7185, #f43f5e);">
+                    <div class="text-center text-white">
+                        <div class="text-5xl font-extrabold tabular-nums drop-shadow-md">10</div>
+                        <div class="text-sm font-medium mt-1 opacity-80">Count your Blessings</div>
+                    </div>
+                    <!-- Decorative circles -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 bg-white"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-full opacity-20 bg-white"></div>
+                </div>
+
+                <!-- Card info -->
+                <div class="p-5">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800">Counter App</h3>
+                            <p class="text-sm text-slate-500 mt-1">
+                                A simple digital counter to track anything — reps, laps, or blessings.
+                            </p>
+                        </div>
+                        <span class="ml-3 mt-0.5 text-rose-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Tech tags -->
+                    <div class="flex gap-2 mt-3 flex-wrap">
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-rose-50 text-rose-500 font-medium">HTML</span>
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-rose-50 text-rose-500 font-medium">Tailwind</span>
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-rose-50 text-rose-500 font-medium">JavaScript</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2: Pomodoro Timer -->
+            <a href="./pomodoro-timer/index.html"
+               class="fade-up delay-4 card-hover block rounded-3xl overflow-hidden shadow-md"
+               style="background: white;">
+                <!-- Preview area -->
+                <div class="h-40 flex items-center justify-center relative overflow-hidden"
+                     style="background: linear-gradient(135deg, #c4b5fd, #a78bfa, #7c3aed);">
+                    <div class="text-center text-white">
+                        <div class="text-5xl font-extrabold tabular-nums drop-shadow-md">25:00</div>
+                        <div class="text-sm font-medium mt-1 opacity-80">Focus Time</div>
+                    </div>
+                    <!-- Decorative circles -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 bg-white"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-full opacity-20 bg-white"></div>
+                </div>
+
+                <!-- Card info -->
+                <div class="p-5">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800">Pomodoro Timer</h3>
+                            <p class="text-sm text-slate-500 mt-1">
+                                Focus & break session timer with SVG progress ring, auto switching, and streak tracking.
+                            </p>
+                        </div>
+                        <span class="ml-3 mt-0.5 text-violet-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Tech tags -->
+                    <div class="flex gap-2 mt-3 flex-wrap">
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-violet-50 text-violet-500 font-medium">HTML</span>
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-violet-50 text-violet-500 font-medium">Tailwind</span>
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-violet-50 text-violet-500 font-medium">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded-full text-xs bg-violet-50 text-violet-500 font-medium">Web Audio API</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- More coming soon -->
+        <div class="fade-up delay-4 mt-6 rounded-3xl border-2 border-dashed border-slate-200 p-8 text-center">
+            <div class="text-3xl mb-2">🚀</div>
+            <p class="text-slate-400 font-medium">More projects coming soon...</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center pb-8 text-sm text-slate-400">
+        Built with ❤️ by Shabina · Vanilla JS
+    </footer>
+
+</body>
+</html>
